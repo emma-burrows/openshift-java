@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Welcome to Emma's Openshift test</title>
+  <title>Welcome to Emma's Java test</title>
   <style>
   html { 
   background: black; 
@@ -122,61 +122,17 @@
     <div class="brand-text"><strong>Open</strong>Shift</div>
   </a>
   <h1>
-    Welcome to OpenShift, JBossAS7 Cartridge
+    Welcome to Emma Burrows's Java test site
   </h1>
   <p>
-    Place your application here
+    This site uses the following technologies:
+    <ul>
+      <li>OpenShift Platform as a Service</li>
+      <li>JBoss AS 7.1 web platform</li>
+      <li>Java 7</li>
+      <li>Source code visible on Git</li>
+    </ul>
   </p>
-  <p>
-    In order to commit to your new project, go to your projects git repo  (created with the rhc app create command) directory.
-  </p>
-  <p>
-    For example, if you named your application myfirstapp (by passing in -a myfirstapp to the rhc app create command),
-      you would find the contents of this app located under myfirstapp/src/main/webapp. You can edit that and push your
-      changes from the myfirstapp directory by running:
-  </p>
-  <pre>
-    git commit -a -m 'Some commit message'
-    git push
-  </pre>
-  <p>
-    Then reload this page.
-  </p>
-  <p>See the myfirstapp/README file for more information on the options for deploying applications.</p>
-
-
-<h2>Sample Applications</h2>
-<p>To get started you can either modify the default war or try one of these samples:
-  <ul>
-    <li><a href="https://github.com/openshift/kitchensink-example">https://github.com/openshift/kitchensink-example</a> this quickstart showcases some of the exciting Java EE6 features available on JBoss AS 7.1.</li>
-    <li><a href="https://github.com/openshift/kitchensink-html5-mobile-example">https://github.com/openshift/kitchensink-html5-mobile-example</a> based on kitchensink (above), but with an HTML5 client that displays great on a PC or mobile device.</li>
-    <li><a href="https://github.com/openshift/tweetstream-example">https://github.com/openshift/tweetstream-example</a> a TweetStream example</li>
-  </ul>
-  
-  <h4>Example usage:</h4>
-  <pre>
-  cd kitchensink
-  git remote add upstream -m master git://github.com/openshift/kitchensink-example.git
-  git pull -s recursive -X theirs upstream master
-  </pre>
-</p>
-
-<h2>Debugging</h2>
-<p>View debugging information about the server environment including memory pools by loading this JSP page: <a href="snoop.jsp">Debug</a></p>
-
-  <h2>
-    What's next?
-  </h2>
-  <ul>
-    <li>
-      Why not visit us at <a href="http://www.openshift.com">http://www.openshift.com</a>, or
-    </li>
-    <li>
-      You could get help in the <a href="http://www.openshift.com/forums/openshift">OpenShift forums</a>, or
-    </li>
-    <li>
-      You're welcome to come chat with us in our IRC channel at #openshift on freenode.net
-    </li>
-  </ul>
 </body>
+<footer>Powered by OpenShift</footer>
 </html>

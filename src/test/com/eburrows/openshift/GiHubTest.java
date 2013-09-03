@@ -1,9 +1,10 @@
+package com.eburrows.openshift;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
-public class github
+public class GiHubTest
 {
 
   @Test
