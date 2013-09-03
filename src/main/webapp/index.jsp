@@ -131,7 +131,7 @@
       <li>JBoss AS 7.1 web platform</li>
       <li>Java 7</li>
       <li>Source code visible on Git</li>
-      <li><%=GitHub.getRepository()%></li>
+      <li><%=com.eburrows.openshift.GitHub.getRepository()%></li>
     </ul>
   </p>
 </body>
