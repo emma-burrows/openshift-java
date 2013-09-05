@@ -99,7 +99,10 @@
       <li>
       <%
         GitHub gh = new GitHub();
-        gh.getRepositories();
+        for (Repository repo : gh.getRepositories())
+        { %>
+          <a href="<%= repo.getHtmlUrl() %>"><%= repo.getName() %></a><br/>
+        <% }
       %>
       </li>
     </ul>

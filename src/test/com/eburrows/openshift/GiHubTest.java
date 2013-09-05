@@ -18,6 +18,7 @@ public class GiHubTest
     {
       gh = new GitHub();
       List<Repository> results = gh.getRepositories();
+
       Assert.assertEquals(results.get(0).getOwner().getLogin(), "emma-burrows");
     }
     catch (IOException e)
