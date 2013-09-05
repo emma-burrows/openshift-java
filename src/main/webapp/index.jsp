@@ -81,8 +81,8 @@
     padding: 0;
   }
   li {
-    list-style-type: none;
     padding: .5em 0;
+    padding-left: 1em;
   }
   </style>
 </head>
@@ -96,15 +96,16 @@
       <li>OpenShift Platform as a Service</li>
       <li>JBoss AS 7.1 web platform</li>
       <li>Java 7</li>
-      <li>Source code visible on Git</li>
-      <li>
-      <%
-        GitHub gh = new GitHub();
-        for (Repository repo : gh.getRepositories())
-        { %>
-          <a href="<%= repo.getHtmlUrl() %>"><%= repo.getName() %></a><br/>
-        <% }
-      %>
+      <li>My GitHub repositories:
+	      <ul>
+		      <%
+		        GitHub gh = new GitHub();
+		        for (Repository repo : gh.getRepositories())
+		        { %>
+		          <li><a href="<%= repo.getHtmlUrl() %>"><%= repo.getName() %></a> - <%= repo.getDescription() %></li>
+		        <% }
+		      %>
+	      </ul>
       </li>
     </ul>
 
