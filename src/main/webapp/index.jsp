@@ -1,4 +1,5 @@
 <%@ page import="com.eburrows.openshift.GitHub" %>
+<%@ page import="org.eclipse.egit.github.core.Repository" %>
 <!doctype html>
 <html lang="en">
 <head>
