@@ -9,5 +9,6 @@
     ArchiveClient archiveClient = new ArchiveClient("");
     archiveClient.connectToArchive();
   %>
+  <p><%= archiveClient.work %></p>
 </body>
 </html>
