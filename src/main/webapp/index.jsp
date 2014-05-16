@@ -96,7 +96,7 @@
       <li>OpenShift Platform as a Service</li>
       <li>JBoss AS 7.1 web platform</li>
       <li>Java 7</li>
-      <li>My GitHub repositories:
+      <li>My created GitHub repositories:
 	      <ul>
 		      <%
 		        GitHub gh = new GitHub();

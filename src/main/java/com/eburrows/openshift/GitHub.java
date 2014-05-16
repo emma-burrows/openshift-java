@@ -13,11 +13,17 @@ public class GitHub
   
   public GitHub() throws IOException
   {
+    // Set up a connection to Github
     RepositoryService service = new RepositoryService();
+
+    // Get only the repositories that I manage myself
     try
     {
       for (Repository repo : service.getRepositories("emma-burrows"))
-        repos.add(repo);
+      {
+        if (!repo.isFork())
+          repos.add(repo);
+      }
     }
     catch (IOException e)
     {
