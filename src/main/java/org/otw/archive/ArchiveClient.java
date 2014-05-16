@@ -11,12 +11,15 @@ import java.util.List;
 
 public class ArchiveClient {
 
+  public Work work;
+
   public ArchiveClient(String connectionUrl) {
 
   }
 
   public void connectToArchive() {
-    List<Work> works = new ArrayList<>();
+
+    work = new Work();
 
     ClientConfig clientConfig = new DefaultClientConfig();
 
@@ -26,10 +29,10 @@ public class ArchiveClient {
     Client client = Client.create(clientConfig);
 
     WebResource webResource = client
-            .resource("http://ariana.archiveofourown.org/api/v1/works");
+            .resource("http://ariana.archiveofourown.org/api/v1/works/1793");
 
     ClientResponse response = webResource.accept("application/json")
-            .type("application/json").post(ClientResponse.class, works);
+            .type("application/json").post(ClientResponse.class, work);
 
     if (response.getStatus() != 200) {
       throw new RuntimeException("Failed : HTTP error code : "

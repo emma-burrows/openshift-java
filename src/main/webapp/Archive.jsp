@@ -1,3 +1,4 @@
+<%@ page import="org.otw.archive.ArchiveClient" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -5,7 +6,8 @@
 </head>
 <body>
   <%
-
+    ArchiveClient archiveClient = new ArchiveClient("");
+    archiveClient.connectToArchive();
   %>
 </body>
 </html>
