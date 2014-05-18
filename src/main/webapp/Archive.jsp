@@ -1,4 +1,5 @@
 <%@ page import="org.otw.archive.ArchiveClient" %>
+<%@ page import="org.otw.archive.Work" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,7 +9,10 @@
   <%
     ArchiveClient archiveClient = new ArchiveClient("");
     archiveClient.connectToArchive();
+
+    for (Work work : archiveClient.getResponse()) {
   %>
-  <p><%= archiveClient.work %></p>
+  <p><%= work.getTitle() %></p>
+  <% } %>
 </body>
 </html>

@@ -14,7 +14,7 @@ public class Work {
   private boolean complete;
   private boolean restricted;
   private DateTime revisedAt;
-  private long wordCount;
+  private long word_count;
   private URL url;
   private URL commentUrl;
 
@@ -85,12 +85,12 @@ public class Work {
     this.revisedAt = revisedAt;
   }
 
-  public long getWordCount() {
-    return wordCount;
+  public long getWord_count() {
+    return word_count;
   }
 
-  public void setWordCount(long wordCount) {
-    this.wordCount = wordCount;
+  public void setWord_count(long word_count) {
+    this.word_count = word_count;
   }
 
   public URL getUrl() {
