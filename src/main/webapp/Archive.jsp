@@ -10,6 +10,8 @@
     ArchiveClient archiveClient = new ArchiveClient("");
     archiveClient.connectToArchive();
 
+    out.println(System.getenv("ARCHIVE_HOST"));
+
     for (Work work : archiveClient.getResponse()) {
   %>
   <p><%= work.getTitle() %></p>
