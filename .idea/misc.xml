@@ -16,6 +16,9 @@
       </list>
     </option>
   </component>
+  <component name="ProjectKey">
+    <option name="state" value="https://github.com/emma-burrows/openshift-java.git" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />

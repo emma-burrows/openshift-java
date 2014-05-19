@@ -10,12 +10,8 @@ import com.sun.jersey.api.client.config.DefaultClientConfig;
 
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ArchiveClient {
-
-  public Work[] works;
 
   WebResource webResource;
   ClientResponse response;
@@ -32,12 +28,17 @@ public class ArchiveClient {
     webResource = client
             .resource("http://ariana.archiveofourown.org/api/v1/works");
 
-    works = getResponse();
   }
 
-  public Work[] getResponse() throws IOException {
+  public Work[] getWorks() {
+    Work[] works = null;
+
     try {
-      final String string = webResource.accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
+      connectToArchive();
+      WorkSearch workSearch = new WorkSearch();
+      workSearch.setTitle("Sherlock");
+
+      final String string = webResource.queryParams(workSearch.asQueryParams()).accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
       ObjectMapper mapper = new ObjectMapper();
       // Don't fail if there are properties we don't care about
       mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
@@ -45,7 +46,6 @@ public class ArchiveClient {
     }
     catch (Exception e) {
       System.out.println("There has been an error!" + e.getMessage());
-      throw e;
     }
     return works;
   }

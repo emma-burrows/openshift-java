@@ -11,6 +11,6 @@ public class ArchiveClientTest {
 
     archiveClient.connectToArchive();
 
-    Assert.assertNotEquals(archiveClient.works, null);
+    Assert.assertNotEquals(archiveClient.getWorks(), null);
   }
 }
