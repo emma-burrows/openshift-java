@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2e5be32-53c6-4c3e-a655-cd22e0c9487b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Archive.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/Archive.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Blurb.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/Blurb.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Work.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/Work.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-    </list>
+    <list default="true" id="a2e5be32-53c6-4c3e-a655-cd22e0c9487b" name="Default" comment="" />
     <ignored path="java.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -109,8 +104,8 @@
       <file leaf-file-name="Work.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/Work.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35504887" vertical-offset="90" max-vertical-offset="836">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.71335506" vertical-offset="90" max-vertical-offset="836">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -1676,8 +1671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/Work.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35504887" vertical-offset="90" max-vertical-offset="836">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.71335506" vertical-offset="90" max-vertical-offset="836">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding />
         </state>
       </provider>
