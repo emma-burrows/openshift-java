@@ -1,23 +1,27 @@
-<%@ page import="org.otw.archive.ArchiveClient" %>
-<%@ page import="org.otw.archive.Work" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-  <title>Archive list</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-</head>
-<body>
-  <%
-    ArchiveClient archiveClient = new ArchiveClient("");
-    archiveClient.connectToArchive();
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-    out.println(System.getenv("ARCHIVE_HOST"));
+<jsp:useBean id="bean" class="com.eburrows.openshift.ArchiveBean" scope="request"/>
+<c:set var="work" value="${bean.getWork(param.id)}" scope="request"/>
 
-    for (Work work : archiveClient.getWorks()) {
-  %>
-  <p><a href="<%= work.getId()%>"><%= work.getTitle() %></a></p>
-  <% } %>
+<t:layout>
+  <jsp:attribute name="pageTitle"><c:out value="${work.title}" /></jsp:attribute>
 
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-</body>
-</html>
+  <jsp:body>
+    <div class="well">
+      <jsp:include page="Blurb.jsp"/>
+    </div>
+
+    <div>
+      <c:forEach var="chapter" items="${work.chapters}">
+        <h3>Chapter ${chapter.position}</h3>
+        <c:if test="${chapter.title != ''}"><h2>${chapter.title}</h2></c:if>
+
+        <div>${chapter.content}</div>
+
+      </c:forEach>
+    </div>
+  </jsp:body>
+
+</t:layout>

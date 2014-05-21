@@ -12,6 +12,7 @@
   </head>
   <body>
     <div class="container">
+      <h1><jsp:invoke fragment="pageTitle"/></h1>
       <jsp:doBody/>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

@@ -3,6 +3,7 @@ package org.otw.archive;
 import org.joda.time.DateTime;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.List;
 
 public class Work {
@@ -13,13 +14,14 @@ public class Work {
   private String endnotes;
   private boolean complete;
   private boolean restricted;
-  private DateTime revisedAt;
+  private Date revised_at;
   private long word_count;
   private URL url;
-  private URL commentUrl;
-
+  private URL comment_url;
 
   private List<Creator> creators;
+
+  private List<Chapter> chapters;
 
   public long getId() {
     return id;
@@ -77,12 +79,12 @@ public class Work {
     this.restricted = restricted;
   }
 
-  public DateTime getRevisedAt() {
-    return revisedAt;
+  public Date getRevised_at() {
+    return revised_at;
   }
 
-  public void setRevisedAt(DateTime revisedAt) {
-    this.revisedAt = revisedAt;
+  public void setRevised_at(Date revisedAt) {
+    this.revised_at = revisedAt;
   }
 
   public long getWord_count() {
@@ -101,12 +103,12 @@ public class Work {
     this.url = url;
   }
 
-  public URL getCommentUrl() {
-    return commentUrl;
+  public URL getComment_url() {
+    return comment_url;
   }
 
-  public void setCommentUrl(URL commentUrl) {
-    this.commentUrl = commentUrl;
+  public void setComment_url(URL commentUrl) {
+    this.comment_url = commentUrl;
   }
 
   public List<Creator> getCreators() {
@@ -115,5 +117,13 @@ public class Work {
 
   public void setCreators(List<Creator> creators) {
     this.creators = creators;
+  }
+
+  public List<Chapter> getChapters() {
+    return chapters;
+  }
+
+  public void setChapters(List<Chapter> chapters) {
+    this.chapters = chapters;
   }
 }

@@ -31,12 +31,15 @@ public class ArchiveClient {
   }
 
   public Work[] getWorks() {
+    WorkSearch workSearch = new WorkSearch();
+    return getWorks(workSearch);
+  }
+
+  public Work[] getWorks(WorkSearch workSearch) {
     Work[] works = null;
 
     try {
       connectToArchive();
-      WorkSearch workSearch = new WorkSearch();
-      workSearch.setTitle("Sherlock");
 
       final String string = webResource.queryParams(workSearch.asQueryParams()).accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
       ObjectMapper mapper = new ObjectMapper();
@@ -49,4 +52,21 @@ public class ArchiveClient {
     }
     return works;
   }
+
+    public Work getWorkById(final Integer id) {
+        Work work = null;
+        try {
+            connectToArchive();
+
+            final String string = webResource.path(id.toString()).accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
+            ObjectMapper mapper = new ObjectMapper();
+            // Don't fail if there are properties we don't care about
+            mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+            work = mapper.readValue(string, Work.class);
+        }
+        catch (Exception e) {
+            System.out.println("There has been an error!" + e.getMessage());
+        }
+        return work;
+    }
 }
