@@ -9,7 +9,9 @@
 
   <jsp:body>
     <c:forEach var="work" items="${bean.works}">
+      <c:set var="work" value="${work}" scope="request"/>
       <p><a href="<c:out value="/Work.jsp?id=${work.getId()}"/>"><c:out value="${work.getTitle()}" /></a></p>
+      <jsp:include page="Blurb.jsp"/>
     </c:forEach>
   </jsp:body>
 

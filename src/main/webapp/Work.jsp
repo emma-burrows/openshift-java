@@ -11,6 +11,10 @@
   <jsp:body>
     <div class="well">
       <jsp:include page="Blurb.jsp"/>
+
+      <c:if test="${work.notes != ''}"><b>Notes:</b> ${work.notes}</c:if>
+
+      <a href="${work.comment_url}">Comment on this work at Archive of our Own</a>
     </div>
 
     <div>
@@ -22,6 +26,7 @@
 
       </c:forEach>
     </div>
+    <c:if test="${work.endnotes != ''}"><b>End Notes:</b> ${work.endnotes}</c:if>
   </jsp:body>
 
 </t:layout>
