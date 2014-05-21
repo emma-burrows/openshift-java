@@ -61,7 +61,10 @@ public class ArchiveClient {
         try {
             connectToArchive();
 
-            final String string = webResource.path(id.toString()).accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
+            final String string = webResource.path(id.toString())
+                    .header("Authorization", "Token token=e1b6298a6209dd65e5df95b83b10c0f1")
+                    .accept(MediaType.APPLICATION_JSON_TYPE)
+                    .get(String.class);
             ObjectMapper mapper = new ObjectMapper();
             // Don't fail if there are properties we don't care about
             mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
