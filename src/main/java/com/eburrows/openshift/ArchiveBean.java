@@ -8,14 +8,14 @@ import java.util.Date;
 
 public class ArchiveBean {
 
-  private Work[] works = new ArchiveClient("").getWorks();
+  private Work[] works = new ArchiveClient().getWorks();
 
   public Work[] getWorks() {
     return works;
   }
 
   public Work getWork(Integer id) {
-    return new ArchiveClient("").getWorkById(id);
+    return new ArchiveClient().getWorkById(id);
   }
 
   public String formatDate(Date date) {

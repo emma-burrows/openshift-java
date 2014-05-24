@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="bean" class="com.eburrows.openshift.ArchiveBean" scope="request"/>
+<jsp:useBean id="bean" class="com.eburrows.openshift.ArchiveBean" scope="session"/>
 <c:set var="work" value="${bean.getWork(param.id)}" scope="request"/>
 
 <t:layout>
@@ -14,7 +14,7 @@
 
       <c:if test="${work.notes != ''}"><b>Notes:</b> ${work.notes}</c:if>
 
-      <a href="${work.comment_url}">Comment on this work at Archive of our Own</a>
+      <a href="${work.commentUrl}">Comment on this work at Archive of our Own</a>
     </div>
 
     <div>

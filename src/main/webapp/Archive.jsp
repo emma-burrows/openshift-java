@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="bean" class="com.eburrows.openshift.ArchiveBean" scope="request" />
+<jsp:useBean id="bean" class="com.eburrows.openshift.ArchiveBean" scope="session" />
 
 <t:layout>
   <jsp:attribute name="pageTitle">API Proof of Concept - Java</jsp:attribute>

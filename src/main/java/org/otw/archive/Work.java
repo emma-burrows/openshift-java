@@ -1,6 +1,6 @@
 package org.otw.archive;
 
-import org.joda.time.DateTime;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.net.URL;
 import java.util.Date;
@@ -14,14 +14,22 @@ public class Work {
   private String endnotes;
   private boolean complete;
   private boolean restricted;
-  private Date revised_at;
-  private long word_count;
+
+  @JsonProperty("revised_at")
+  private Date revisedAt;
+
+  @JsonProperty("word_count")
+  private long wordCount;
   private URL url;
-  private URL comment_url;
+
+  @JsonProperty("comment_url")
+  private URL commentUrl;
 
   private List<Creator> creators;
 
   private List<Chapter> chapters;
+
+  // Getters and Setters
 
   public long getId() {
     return id;
@@ -79,20 +87,20 @@ public class Work {
     this.restricted = restricted;
   }
 
-  public Date getRevised_at() {
-    return revised_at;
+  public Date getRevisedAt() {
+    return revisedAt;
   }
 
-  public void setRevised_at(Date revisedAt) {
-    this.revised_at = revisedAt;
+  public void setRevisedAt(Date revisedAt) {
+    this.revisedAt = revisedAt;
   }
 
-  public long getWord_count() {
-    return word_count;
+  public long getWordCount() {
+    return wordCount;
   }
 
-  public void setWord_count(long word_count) {
-    this.word_count = word_count;
+  public void setWordCount(long wordCount) {
+    this.wordCount = wordCount;
   }
 
   public URL getUrl() {
@@ -103,12 +111,12 @@ public class Work {
     this.url = url;
   }
 
-  public URL getComment_url() {
-    return comment_url;
+  public URL getCommentUrl() {
+    return commentUrl;
   }
 
-  public void setComment_url(URL commentUrl) {
-    this.comment_url = commentUrl;
+  public void setCommentUrl(URL commentUrl) {
+    this.commentUrl = commentUrl;
   }
 
   public List<Creator> getCreators() {
