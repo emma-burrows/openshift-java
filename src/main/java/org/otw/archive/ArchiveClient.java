@@ -7,31 +7,40 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.api.client.filter.LoggingFilter;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class ArchiveClient {
+  private Logger logger = Logger.getLogger(WorkSearch.class.getName());
+
   String host = "http://ariana.archiveofourown.org/api/v1";
   String authorizationToken = "Token token=e1b6298a6209dd65e5df95b83b10c0f1";
   WebResource webResource;
   ClientResponse response;
 
+
   public ArchiveClient() {
     ClientConfig clientConfig = new DefaultClientConfig();
     Client client = Client.create(clientConfig);
 
+    // Uncomment this line to enable request/repsonse logging - it's very verbose!
+    // client.addFilter(new LoggingFilter(logger));
+
     webResource = client.resource(host);
   }
 
-  public Work[] getWorks() {
+  public Work[] getWorks() throws IOException {
     WorkSearch workSearch = new WorkSearch();
     return getWorks(workSearch);
   }
 
-  public Work[] getWorks(WorkSearch workSearch) {
+  public Work[] getWorks(WorkSearch workSearch) throws IOException {
     Work[] works = null;
 
     try {
@@ -42,7 +51,8 @@ public class ArchiveClient {
       works = mapper.readValue(string, Work[].class);
     }
     catch (Exception e) {
-      System.out.println("There has been an error!" + e.getMessage());
+      System.out.println("There has been an error! " + e.getMessage());
+      throw e;
     }
     return works;
   }

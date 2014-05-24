@@ -21,30 +21,35 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Project name</a>
+        <a class="navbar-brand" href="#">API Test</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="Archive.jsp">Home</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">This is just a test for demonstration purposes</a></li>
+              <li><a href="/Archive.jsp?fandom=Cabin%20Pressure">It doesn't mean the Archive is getting an API!</a></li>
+            </ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample Fandoms <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/Archive.jsp?fandom=Sherlock+(TV)">Sherlock (TV)</a></li>
+              <li><a href="/Archive.jsp?fandom=Cabin%20Pressure">Cabin Pressure</a></li>
+              <li><a href="/Archive.jsp?fandom=Merlin+(TV)">Merlin (TV)</a></li>
               <li class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
+              <li class="dropdown-header">More fandoms!</li>
+              <li><a href="/Archive.jsp?fandom=The+Avengers+(2012)">The Avengers (2012)</a></li>
+              <li><a href="/Archive.jsp?fandom=Harry Potter - J. K. Rowling ">Harry Potter - J. K. Rowling</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Fun with WorkSearch</li>
+              <li><a href="/Archive.jsp">Whatever random stuff Elasticsearch spits out</a></li>
             </ul>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../navbar/">Default</a></li>
-          <li><a href="../navbar-static-top/">Static top</a></li>
-          <li class="active"><a href="./">Fixed top</a></li>
+          <li><a href="http://archiveofourown.org">Archive of Our Own</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

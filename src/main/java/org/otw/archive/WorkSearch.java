@@ -1,20 +1,28 @@
 package org.otw.archive;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.jersey.api.representation.Form;
 import org.joda.time.DateTime;
 
 import javax.ws.rs.core.MultivaluedMap;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.logging.Logger;
 
 public class WorkSearch {
 
-  private static final Logger LOGGER = Logger.getLogger(WorkSearch.class.getName());
+  @JsonIgnore
+  private static final Logger logger = Logger.getLogger(WorkSearch.class.getName());
 
   private String title;
   private Creator creator;
-  private DateTime revised_at;
-  private String language_id;
+
+  @JsonProperty("revised_at")
+  private DateTime revisedAt;
+
+  @JsonProperty("language_id")
+  private String languageId;
   private Boolean complete;
 //          :single_chapter,
 //          :word_count,
@@ -27,7 +35,9 @@ public class WorkSearch {
 //          :tag,
 //          :other_tag_names,
 //          :filter_ids,
-//          :fandom_names,
+  @JsonProperty("fandom_names")
+  private String fandomNames;
+
 //          :fandom_ids,
 //          :rating_ids,
 //          :category_ids,
@@ -51,13 +61,29 @@ public class WorkSearch {
       try {
         field.setAccessible(true);
         final Object value = field.get(this);
-        if (value != null && field.getName() != "LOGGER") {
-          final String name = field.getName();
-          queryParams.add(name, value.toString());
+        String name = field.getName();
+
+        if (value != null) {
+          // Get annotations in case field is ignored or its name is overridden
+          Annotation[] annotations = field.getDeclaredAnnotations();
+          if (annotations.length > 0) {
+            for (Annotation annotation : annotations) {
+              if (annotation instanceof JsonIgnore) {
+                break;
+              }
+              else if (annotation instanceof JsonProperty) {
+                name = ((JsonProperty) annotation).value();
+                queryParams.add(name, value.toString());
+              };
+            }
+          }
+          else {
+            queryParams.add(name, value.toString());
+          }
         }
       }
       catch (IllegalAccessException e) {
-        LOGGER.severe("Error accessing a field: " + e.getMessage());
+        logger.severe("Error accessing a field: " + e.getMessage());
       }
       finally {
         field.setAccessible(accessible);
@@ -65,6 +91,9 @@ public class WorkSearch {
     }
     return queryParams;
   }
+
+  // Getters and setters
+
 
   public String getTitle() {
     return title;
@@ -82,35 +111,43 @@ public class WorkSearch {
     this.creator = creator;
   }
 
-  public DateTime getRevised_at() {
-    return revised_at;
+  public DateTime getRevisedAt() {
+    return revisedAt;
   }
 
-  public void setRevised_at(DateTime revised_at) {
-    this.revised_at = revised_at;
+  public void setRevisedAt(DateTime revisedAt) {
+    this.revisedAt = revisedAt;
   }
 
-  public String getLanguage_id() {
-    return language_id;
+  public String getLanguageId() {
+    return languageId;
   }
 
-  public void setLanguage_id(String language_id) {
-    this.language_id = language_id;
+  public void setLanguageId(String languageId) {
+    this.languageId = languageId;
   }
 
-  public boolean isComplete() {
+  public Boolean getComplete() {
     return complete;
   }
 
-  public void setComplete(boolean complete) {
+  public void setComplete(Boolean complete) {
     this.complete = complete;
   }
 
-  public int getPage() {
+  public String getFandomNames() {
+    return fandomNames;
+  }
+
+  public void setFandomNames(String fandomNames) {
+    this.fandomNames = fandomNames;
+  }
+
+  public Integer getPage() {
     return page;
   }
 
-  public void setPage(int page) {
+  public void setPage(Integer page) {
     this.page = page;
   }
 }

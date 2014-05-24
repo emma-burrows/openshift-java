@@ -21,9 +21,9 @@ public class ArchiveClientIntegrationTest {
     Assert.assertNotEquals(archiveClient.getWorks(workSearch).length, 0);
   }
 
-    @Test
-    public void getWorkById() throws Exception {
-        Work work = archiveClient.getWorkById(2);
-        Assert.assertNotEquals(work, null);
-    }
+  @Test
+  public void getWorkById() throws Exception {
+      Work work = archiveClient.getWorkById(2);
+      Assert.assertNotEquals(work, null);
+  }
 }

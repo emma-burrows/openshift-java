@@ -1,12 +1,19 @@
 package org.otw.archive;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.otw.archive.metadata.*;
+import org.otw.archive.metadata.Character;
 
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Work {
+  @JsonIgnore
+  private static final Logger logger = Logger.getLogger(WorkSearch.class.getName());
+
   private long id;
   private String title;
   private String summary;
@@ -25,9 +32,18 @@ public class Work {
   @JsonProperty("comment_url")
   private URL commentUrl;
 
+  private Rating[] ratings;
+  private Warning[] warnings;
+  private Fandom[] fandoms;
+  private Character[] characters;
+  private Category[] categories;
+  @JsonProperty("additional_tags")
+  private AdditionalTag[] additionalTags;
+
   private List<Creator> creators;
 
   private List<Chapter> chapters;
+
 
   // Getters and Setters
 
@@ -117,6 +133,54 @@ public class Work {
 
   public void setCommentUrl(URL commentUrl) {
     this.commentUrl = commentUrl;
+  }
+
+  public Rating[] getRatings() {
+    return ratings;
+  }
+
+  public void setRatings(Rating[] ratings) {
+    this.ratings = ratings;
+  }
+
+  public Warning[] getWarnings() {
+    return warnings;
+  }
+
+  public void setWarnings(Warning[] warnings) {
+    this.warnings = warnings;
+  }
+
+  public Fandom[] getFandoms() {
+    return fandoms;
+  }
+
+  public void setFandoms(Fandom[] fandoms) {
+    this.fandoms = fandoms;
+  }
+
+  public Character[] getCharacters() {
+    return characters;
+  }
+
+  public void setCharacters(Character[] characters) {
+    this.characters = characters;
+  }
+
+  public Category[] getCategories() {
+    return categories;
+  }
+
+  public void setCategories(Category[] categories) {
+    this.categories = categories;
+  }
+
+  public AdditionalTag[] getAdditionalTags() {
+    return additionalTags;
+  }
+
+  public void setAdditionalTags(AdditionalTag[] additionalTags) {
+    this.additionalTags = additionalTags;
   }
 
   public List<Creator> getCreators() {
