@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<div>
+<div style="margin-bottom: 10px;">
   <c:forEach var="rating" items="${work.ratings}" varStatus="loop">
     <span class="label label-${bean.classForRating(rating.id)}">
       ${rating.name}
@@ -17,7 +17,7 @@
 
 <div><b>Fandoms:</b> <c:forEach var="fandom" items="${work.fandoms}" varStatus="loop">${fandom.name}<c:if test="${!loop.last}">, </c:if></c:forEach></div>
 
-<div><b>Summary:</b> ${work.getSummary()}</div>
+<div>${work.getSummary()}</div>
 
 <%--private boolean complete;--%>
 <%--private boolean restricted;--%>

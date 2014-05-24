@@ -35,16 +35,16 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample Fandoms <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="/Archive.jsp?fandom=Sherlock+(TV)">Sherlock (TV)</a></li>
-              <li><a href="/Archive.jsp?fandom=Cabin%20Pressure">Cabin Pressure</a></li>
-              <li><a href="/Archive.jsp?fandom=Merlin+(TV)">Merlin (TV)</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">More fandoms!</li>
               <li><a href="/Archive.jsp?fandom=The+Avengers+(2012)">The Avengers (2012)</a></li>
+              <li><a href="/Archive.jsp?fandom=Cabin%20Pressure">Cabin Pressure</a></li>
               <li><a href="/Archive.jsp?fandom=Harry Potter - J. K. Rowling ">Harry Potter - J. K. Rowling</a></li>
               <li class="divider"></li>
+              <li class="dropdown-header">More fandoms!</li>
+              <li><a href="/Archive.jsp?fandom=Merlin+(TV)">Merlin (TV)</a></li>
+              <li><a href="/Archive.jsp?fandom=Sherlock+(TV)">Sherlock (TV)</a></li>
+              <li class="divider"></li>
               <li class="dropdown-header">Fun with WorkSearch</li>
-              <li><a href="/Archive.jsp">Whatever random stuff Elasticsearch spits out</a></li>
+              <li><a href="/Archive.jsp">Random default from Elasticsearch</a></li>
             </ul>
           </li>
         </ul>
