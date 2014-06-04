@@ -45,6 +45,11 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>org.transformativeworks</groupId>
+          <artifactId>ArchiveClientLibrary</artifactId>
+          <version>0.1-SNAPSHOT</version>
+      </dependency>
   </dependencies>
   <profiles>
     <profile>
